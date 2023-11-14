@@ -141,7 +141,7 @@ window.addEventListener("load", function () {
             }
 
             // Ensure element is not already initialized.
-            if (initialized.indexOf(element) >= 0) {
+            if (initialized.indexOf(element.id) >= 0) {
                 return;
             }
 
@@ -166,7 +166,7 @@ window.addEventListener("load", function () {
             $(element).trigger('autocompleteLightInitialize');
 
             // Add element to the array of already initialized fields
-            initialized.push(element);
+            initialized.push(element.id);
 
             // creates and dispatches the event to notify of the initialization completed
             var dalElementInitializedEvent = new CustomEvent("dal-element-initialized", {
